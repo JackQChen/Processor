@@ -1,0 +1,6 @@
+# install
+.\playwright.ps1 install
+
+# codegen
+.\playwright.ps1 codegen google.com
+.\playwright.ps1 codegen --viewport-size=800,600 google.com
