@@ -1,6 +1,9 @@
 # install
 powershell -ExecutionPolicy Bypass .\playwright.ps1 install
 
+# uninstall
+powershell -ExecutionPolicy Bypass .\playwright.ps1 uninstall --all
+
 # codegen
 powershell -ExecutionPolicy Bypass .\playwright.ps1 codegen google.com
 powershell -ExecutionPolicy Bypass .\playwright.ps1 codegen --viewport-size=800,600 google.com
