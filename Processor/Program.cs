@@ -15,7 +15,7 @@ namespace Processor
 
             // chrome://version
             var chromePath = @"C:\Program Files\Google\Chrome\Application\chrome.exe";
-            var profilePath = @"C:\Users\jack.chen\AppData\Local\Google\Chrome\User Data\Profile 1";
+            var profilePath = @"C:\Users\jack.chen\AppData\Local\Google\Chrome\User Data\Default";
 
             var browserContext = await playwright.Chromium.LaunchPersistentContextAsync(profilePath,
                 new BrowserTypeLaunchPersistentContextOptions
@@ -26,8 +26,9 @@ namespace Processor
             );
 
             var page = browserContext.Pages.First();
-            await page.GotoAsync("https://www.google.com");
+            await page.GotoAsync("https://www.github.com");
             await page.PauseAsync();
+            // Click Record
         }
 
     }
