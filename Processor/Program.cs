@@ -34,7 +34,7 @@ namespace Processor
             while (true)
             {
                 await page.Locator("#island_d3bbb div").First.ClickAsync();
-                Thread.Sleep(500);
+                Thread.Sleep(new Random().Next(100, 300));
             }
         }
 
