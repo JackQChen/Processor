@@ -15,7 +15,7 @@ namespace Processor
 
             // chrome://version
             var chromePath = @"C:\Program Files\Google\Chrome\Application\chrome.exe";
-            var profilePath = @"C:\Users\jack.chen\AppData\Local\Google\Chrome\User Data\Default";
+            var profilePath = @"C:\Users\Administrator\AppData\Local\Google\Chrome\User Data\Default";
 
             var browserContext = await playwright.Chromium.LaunchPersistentContextAsync(profilePath,
                 new BrowserTypeLaunchPersistentContextOptions
@@ -26,9 +26,16 @@ namespace Processor
             );
 
             var page = browserContext.Pages.First();
-            await page.GotoAsync("https://www.github.com");
-            await page.PauseAsync();
+            await page.GotoAsync("https://www.douyin.com/");
+            //await page.PauseAsync();
             // Click Record
+            await page.GotoAsync("https://www.douyin.com/?recommend=1");
+            await page.GotoAsync("https://www.douyin.com/follow/live/878652259214");
+            while (true)
+            {
+                await page.Locator("#island_d3bbb div").First.ClickAsync();
+                Thread.Sleep(500);
+            }
         }
 
     }
